@@ -494,7 +494,7 @@
       // Check if the user is on a mobile device
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // If on a mobile device, open the WhatsApp app
-        window.location.href = "tel:+971544641726";
+        window.location.href = "https://api.whatsapp.com/send?phone=+971544641726";
       } else {
         // If on desktop, open the WhatsApp web link
         window.open("https://web.whatsapp.com/send?phone=+971544641726", '_blank');
