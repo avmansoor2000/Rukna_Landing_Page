@@ -52,7 +52,7 @@
 
   <!-- whatsapp -->
   <!-- <strong>Phone:</strong> <a href="tel:+971544641726">+971 544641726</a><br> -->
-  <a href="https://wa.me/+919995113575" class="btn-whatsapp-pulse btn-whatsapp-pulse-border" id="whatsappButton" role="button" aria-label="Call via WhatsApp">
+  <a href="tel:+971544641726" class="btn-whatsapp-pulse btn-whatsapp-pulse-border" id="whatsappButton" role="button" aria-label="Call via WhatsApp">
     <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 
@@ -490,9 +490,15 @@
     document.getElementById("whatsappButton").addEventListener("click", function(event) {
       // Prevent the default action (initiating a phone call) on click
       event.preventDefault();
-      
-      // Open the WhatsApp app or web link
-      window.location.href = "https://api.whatsapp.com/send?phone=+971544641726";
+  
+      // Check if the user is on a mobile device
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // If on a mobile device, open the WhatsApp app
+        window.location.href = "tel:+971544641726";
+      } else {
+        // If on desktop, open the WhatsApp web link
+        window.open("https://web.whatsapp.com/send?phone=+971544641726", '_blank');
+      }
     });
   </script>
 
